@@ -1,0 +1,26 @@
+{% extends 'st_web/base.html' %}
+
+{% block content %}
+
+<div class="page-header header">
+	<h3 class="heading">Total Contributed in the Month</h3>
+</div>
+
+	<table>
+		<tr class="main-row">
+			<td style="padding-left: 10px;">Contributor</td>
+			<td>Contributions</td>
+		</tr>
+{% if con_list %}
+		{% for user in con_list %}
+			<tr style="background-color: #D3D3D3;">
+				<td>{{ user.name }}</td>
+				<td>{{ user.contributions }}</td>
+			</tr>
+		{% endfor %}
+{% else %}
+		<tr>
+			<td colspan="2">No contributions in the month</td>
+		</tr>
+{% endif %}
+{% endblock %}

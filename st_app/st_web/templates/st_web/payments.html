@@ -1,0 +1,26 @@
+{% extends 'st_web/base.html' %}
+
+{% block content %}
+
+<div class="page-header header">
+	<h3 class="heading">Amount Payable</h3>
+</div>
+
+	<table>
+		<tr class="main-row">
+			<td style="padding-left: 10px;">Contributor</td>
+			<td>Amount payable</td>
+		</tr>
+{% if payment_list %}
+		{% for payer in payment_list %}
+			<tr style="background-color: #D3D3D3;">
+				<td>{{ payer.user.name }}</td>
+				<td>{{ payer.amount }}</td>
+			</tr>
+		{% endfor %}
+{% else %}
+		<tr>
+			<td colspan="2">No amount to be payed</td>
+		</tr>
+{% endif %}
+{% endblock %}

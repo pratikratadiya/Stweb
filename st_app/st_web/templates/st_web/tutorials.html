@@ -1,0 +1,32 @@
+{% extends 'st_web/base.html' %}
+
+{% block content %}
+
+<div class="page-header header">
+	<h3 class="heading">Tutorials Contributed in the Month</h3>
+</div>
+
+	<table>
+		<tr class="main-row">
+			<td style="padding-left: 10px;">Contributor</td>
+			<td>FOSS</td>
+			<td>Tutorial Name</td>
+			<td>Expected Date</td>
+			<td>Actual Date</td>
+		</tr>
+{% if tut_list %}
+		{% for tutorial in tut_list %}
+			<tr style="background-color: #D3D3D3;">
+				<td>{{ tutorial.parent_foss.contributor.name }}</td>
+				<td>{{ tutorial.parent_foss.foss_name }}</td>
+				<td>{{ tutorial.tutorial_name }}</td>
+				<td>{{ tutorial.expected_date }}</td>
+				<td>{{ tutorial.actual_date }}</td>
+			</tr>
+		{% endfor %}
+{% else %}
+		<tr>
+			<td colspan="5">No entries to display</td>
+		</tr>
+{% endif %}
+{% endblock %}
