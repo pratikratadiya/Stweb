@@ -1,0 +1,17 @@
+{% extends 'st_web/base.html' %}
+
+{% block content %}
+
+<div class="page-header header">
+	<h3 class="heading">Upload Tutorial</h3>
+</div>
+<h2>Tutorial Name: {{ tutorial.tutorial_name }}</h2>
+<h3> Expected date: {{ tutorial.expected_date }}</h3><hr>
+
+  <form method="post" enctype="multipart/form-data" style="margin-left: 25px;margin-top: 15px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+{% endblock %}

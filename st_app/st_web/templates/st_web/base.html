@@ -24,7 +24,7 @@
     <ul class="nav navbar-right" style="margin-top: 8px; margin-right: 15px;">
     <p style="color:white;font-size: 180%;font-weight: bolder;">
     {% if user.is_authenticated %}
-    Hi {{ user.username }}!&nbsp;<a href="/logout/" style="color:white;font-size: 110%;font-weight: bolder;">LogOut</a></span></p>
+    Hi <a href="/profile/{{ user.id }}/" style="color:white;font-size: 110%;font-weight: bolder;"><u>{{ user.username }}</u></a>!&nbsp;<a href="/logout/" style="color:white;font-size: 110%;font-weight: bolder;">LogOut</a></span></p>
     {% else %}
     	<a href="/login/" style="color:white;font-size: 140%;font-weight: bolder;">Login</a>&nbsp;&nbsp;<a href="/signup/" style="color:white;font-size: 140%;font-weight: bolder;">| Signup</a>
     {% endif %}    

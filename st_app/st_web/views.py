@@ -1,6 +1,51 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views import generic 
+from django import forms
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
+from .forms import CustomUserCreationForm, TutorialAddForm, TutorialUploadForm
+import datetime 
+from django.shortcuts import render,get_object_or_404,redirect
 
-from .models import tutorial_detail,user,payment
+from .models import tutorial_detail,user,payment,foss
+
+class SignUp(generic.CreateView):
+	form_class = CustomUserCreationForm
+	success_url = reverse_lazy('login')
+	template_name = 'st_web/signup.html'
+
+@method_decorator(staff_member_required, name='dispatch')
+class AddFoss(generic.CreateView):
+	model = foss
+	fields = '__all__'
+	success_url = reverse_lazy('home')
+	template_name = 'st_web/addfoss.html'
+
+@method_decorator(staff_member_required, name='dispatch')
+class AddTutorial(generic.CreateView):
+	form_class = TutorialAddForm
+	success_url = reverse_lazy('home')
+	template_name = 'st_web/addtutorial.html'
+
+
+def profile(request, profile_id):
+	prof = get_object_or_404(user, pk=profile_id)
+	pend_list = tutorial_detail.objects.filter(actual_date__isnull=True,parent_foss__contributor__id=profile_id)
+	return render(request, 'st_web/profile.html',{'prof':prof,'pend_list':pend_list,})
+
+
+def upload(request, tutorial_id):
+    tutorial = get_object_or_404(tutorial_detail, pk=tutorial_id)
+    if request.method == "POST":
+        form = TutorialUploadForm(request.POST, request.FILES, instance=tutorial)
+        if form.is_valid():
+            tutorial = form.save(commit=False)
+            tutorial.actual_date = datetime.date.today()
+            tutorial.save()
+            return redirect('home')
+    else:
+        form = TutorialUploadForm(instance=tutorial)
+    return render(request, 'st_web/upload.html', {'form': form,'tutorial': tutorial,})
 
 a = user.objects.all()
 
