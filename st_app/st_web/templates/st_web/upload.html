@@ -1,3 +1,5 @@
+<!--Page to display form to upload tutorial for a contributor-->
+
 {% extends 'st_web/base.html' %}
 
 {% block content %}
@@ -5,13 +7,20 @@
 <div class="page-header header">
 	<h3 class="heading">Upload Tutorial</h3>
 </div>
+
 <h2>Tutorial Name: {{ tutorial.tutorial_name }}</h2>
 <h3> Expected date: {{ tutorial.expected_date }}</h3><hr>
+
+<!--Provide facility to upload only if the contributor himself has accessed the page-->
+
+{% if user.id == tutorial.parent_foss.contributor.id %}
 
   <form method="post" enctype="multipart/form-data" style="margin-left: 25px;margin-top: 15px;">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Upload</button>
+    <button type="submit" style="margin-top: 20px;">Upload</button>
   </form>
+
+{% endif %}
 
 {% endblock %}

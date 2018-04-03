@@ -1,3 +1,5 @@
+<!--Page to provide facility to admin to assign tutorial-->
+
 {% extends 'st_web/base.html' %}
 
 <h2>Add Tutorial</h2>
@@ -6,7 +8,7 @@
 <div class="page-header header">
 	<h3 class="heading">Add Tutorial</h3>
 </div>
-  <form method="post" style="margin-left: 25px;margin-top: 15px;">
+  <form method="post" style="margin-left: 25px;margin-top: 15px;">      <!--Form to assign tutorial-->
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" style="background-color:#D3D3D3;height:40px;width: 50px;border-radius: 5px;">Add</button>

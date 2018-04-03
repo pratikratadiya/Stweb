@@ -1,18 +1,26 @@
-{% load staticfiles %}
+{% load staticfiles %}      <!--Loading the CSS files -->
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FOSS</title>
+
+<!--Custom CSS file-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+
+<!--Links for Bootstrap-->
 <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
 
 </head>
+
 <body>
+
+<!--Menu Bar-->
 <nav class="navbar navbar-inverse" style="height: 60px;">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+
     <div class="navbar-header" style="margin-top: 5px;">
     	<a href="/" style="color: white;text-decoration:none;font-size: 180%;font-weight:bolder;margin-left: 15px;">
             <img width = "45px" src="http://spoken-tutorial.org/static/spoken/images/logo.png" alt="Spoken-Tutorial logo" style="margin-left: 5px;">
@@ -21,18 +29,25 @@
         </a>
 
     </div>
+
     <ul class="nav navbar-right" style="margin-top: 8px; margin-right: 15px;">
+
     <p style="color:white;font-size: 180%;font-weight: bolder;">
     {% if user.is_authenticated %}
+
     Hi <a href="/profile/{{ user.id }}/" style="color:white;font-size: 110%;font-weight: bolder;"><u>{{ user.username }}</u></a>!&nbsp;<a href="/logout/" style="color:white;font-size: 110%;font-weight: bolder;">LogOut</a></span></p>
+
     {% else %}
+
     	<a href="/login/" style="color:white;font-size: 140%;font-weight: bolder;">Login</a>&nbsp;&nbsp;<a href="/signup/" style="color:white;font-size: 140%;font-weight: bolder;">| Signup</a>
     {% endif %}    
 
     </ul>		
   </div><!-- /.container-fluid -->
 </nav>
-{% block content %}
+
+{% block content %}         <!--All extended template's content will be placed here-->
 {% endblock %}
+
 </body>
 </html>

@@ -1,3 +1,5 @@
+<!-- Profile page for a user containing details and facility to submit tutorials-->
+
 {% extends 'st_web/base.html' %}
 
 {% block content %}
@@ -5,28 +7,39 @@
 <div class="page-header header">
 	<h3 class="heading">Profile</h3>
 </div>
+
+<!--Display user name and contributions -->
 	<hr>
 	<h2>Name: {{ prof.name }}</h2><br>
 	<h2>Contributions: {{ prof.contributions}} </h2>
 	<hr>
-{% if user.is_authenticated %}
+	
+<!--Show pending tutorials and submission facility only if the profile user has himself accessed the page-->	
+{% if user.id == prof.id %}
 	<h2><u>Pending tutorials</u><h2><br>
 	<table>
 		<tr class="main-row">
 			<td style="padding-left: 10px;">Tutorial</td>
 			<td>Expected Date</td>
+			<td></td>
 		</tr>
-{% if pend_list %}
+		
+{% if pend_list %}      <!--Show every pending tutorial per row with submission URL-->
+
 		{% for tut in pend_list %}
 			<tr style="background-color: #D3D3D3;">
-				<td><a href ="/upload/{{ tut.id }}/">{{ tut.tutorial_name }}</td>
+				<td>{{ tut.tutorial_name }}</td>
 				<td>{{ tut.expected_date }}</td>
+				<td><a href ="/upload/{{ tut.id }}/">Submit tutorial</a></td>
 			</tr>
 		{% endfor %}
+		
 {% else %}
 		<tr>
-			<td colspan="2">No pending tutorials</td>
+			<td colspan="3">No pending tutorials</td>   <!--No pending tutorials-->
 		</tr>
 {% endif %}
+
 {% endif %}
+
 {% endblock %}

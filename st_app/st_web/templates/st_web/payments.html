@@ -1,3 +1,5 @@
+<!--Page to display payment to be done to every user -->
+
 {% extends 'st_web/base.html' %}
 
 {% block content %}
@@ -11,6 +13,8 @@
 			<td style="padding-left: 10px;">Contributor</td>
 			<td>Amount payable</td>
 		</tr>
+		
+<!--Display contributor and amount in row if list present else appropriate message-->		
 {% if payment_list %}
 		{% for payer in payment_list %}
 			<tr style="background-color: #D3D3D3;">

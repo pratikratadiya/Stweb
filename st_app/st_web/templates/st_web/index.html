@@ -1,3 +1,5 @@
+<!--Index page of the Payment statistics module-->
+
 {% extends 'st_web/base.html' %}
 
 {% block content %}
@@ -17,6 +19,8 @@
 <div class="page-header" style="border-left: 5px solid cyan; margin-left: 35px;">
 	<h4 class="point"><a class="link" href="/payments/">Amount payable per contributor</a></h4>
 </div>
+
+<!--Provide facility to add FOSS or assign tutorial if admin has logged in -->
 
 {% if user.is_superuser %}
 <div class="container-fluid">

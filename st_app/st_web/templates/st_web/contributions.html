@@ -1,3 +1,5 @@
+<!--Page to display contributions per user in a month -->
+
 {% extends 'st_web/base.html' %}
 
 {% block content %}
@@ -6,11 +8,13 @@
 	<h3 class="heading">Total Contributed in the Month</h3>
 </div>
 
-	<table>
+    <!-- Displaying all entries as Table -->
+	<table> 
 		<tr class="main-row">
 			<td style="padding-left: 10px;">Contributor</td>
 			<td>Contributions</td>
 		</tr>
+		<!-- If entries are present displaying each column value in a cell -->
 {% if con_list %}
 		{% for user in con_list %}
 			<tr style="background-color: #D3D3D3;">
