@@ -49,6 +49,8 @@
     `python manage.py makemigrations`
     `python manage.py migrate`
 
+8. Create a superuser using the command `python manage.py createsuperuser` within directory `/st_app/`
+
 This completes the installation process and you are ready to use the product!
 
 ***************************************************************
