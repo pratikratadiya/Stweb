@@ -47,7 +47,6 @@
 
 7. Perform migrations into the database using the following commands             
     `python manage.py makemigrations`
-    `python manage.py sqlmigrate st_web 0001_initial`
     `python manage.py migrate`
 
 This completes the installation process and you are ready to use the product!
