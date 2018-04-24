@@ -1,4 +1,15 @@
-************Documentation for Payment Statistics Module****************
+DOCUMENTATION v0.0/ 04 APRIL 2018
+
+# PAYMENT STATISTICS MODULE FOR SPOKEN TUTORIALS
+Github repository link: https://github.com/prratadiya/Stweb.git
+
+## INTRODUCTION
+	This is a payment statistics module which helps to tabulate records such as tutorials submitted by contributors as well as amount payable to them. Made using Django and mySQL database, it is both fast as well as reliable to keep track of payment statistics. 
+	
+## CONTRIBUTING
+
+- You can raise an issue under the issues tab of the github repository. Mention the issue along with the expected output. 
+- To raise a pull request(PR) on solving a listed issue, sign it and attach screenshot of the working output. You can raise a PR by forking this repository, working over the forked repository, committing changes and then raising a pull request under the Code section!
 
 # Table of Contents
 
@@ -7,7 +18,10 @@
 3. Features
 4. Tables structure 
 5. Scope for improvement 
-
+6. Contact
+7. License
+  -Remarks 
+  
 ***************************************************************
 
 // 1. INSTALLATION AND REQUIREMENTS //
@@ -18,7 +32,13 @@
 
 -> Installation procedure:
 
+Clone the repository by going into the directory where you want to install the software through terminal and type the command
+	`git clone https://www.github.com/prratadiya/Stweb.git` 
+This will lead to cloning of code into Stweb directory. 
+(Note: If git is not installed you can do the same by typing the command `sudo apt-get install git` in Ubuntu)
+
 1. Go to the directory where you have cloned the repo and activate virtual environment 
+    `cd Stweb`
     `source myvenv/bin/activate`
 
 2. Upgrade pip and install Django version 2.0
@@ -94,7 +114,21 @@ This completes the installation process and you are ready to use the product!
 
 - Giving user the liberty to chose the month for which they wish to see the concerned lists
 - Improving front end styling of forms and profile pages
-- Payment gateway for admin to pay pending amounts to contributors and subsequent changes in the amount payable 
+- Payment gateway for admin to pay pending amounts to contributors and subsequent changes in the amount payable columns.
+
+****************************************************************
+
+// 6. CONTACT //
+Documentation By: Pratik Rajendra Ratadiya
+Contact me at: prratadiya@gmail.com
+Github profile link: https://www.github.com/prratadiya
+
+****************************************************************
+
+// 7. LICENSE //
+
+You are not limited to use my resources. No hidden policies or rules. But a link back to me will be highly appreciated!. 
+Fair and free use of resources is expected.
 
 ****************************************************************
 
@@ -103,7 +137,3 @@ This completes the installation process and you are ready to use the product!
 If you face problems while installation on system other than Linux(Ubuntu,Fedora etc.) like Windows, MacOS
 feel free to refer the following link:
 	https://tutorial.djangogirls.org/en/django_installation/
-	
-Documentation By: Pratik Rajendra Ratadiya
-Contact me at: prratadiya@gmail.com
-Github profile link: https://www.github.com/prratadiya
