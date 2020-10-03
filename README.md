@@ -1,17 +1,15 @@
-DOCUMENTATION v0.0/ 04 APRIL 2018
-
 # PAYMENT STATISTICS MODULE FOR SPOKEN TUTORIALS
-Github repository link: https://github.com/prratadiya/Stweb.git
+Github repository link: https://github.com/prratadiya/Stweb
 
 ## INTRODUCTION
-	This is a payment statistics module which helps to tabulate records such as tutorials submitted by contributors as well as amount payable to them. Made using Django and mySQL database, it is both fast as well as reliable to keep track of payment statistics. 
+This is a payment statistics module which helps to tabulate records such as tutorials submitted by contributors as well as amount payable to them. Made using Django and mySQL database, it is both fast as well as reliable to keep track of payment statistics. 
 	
 ## CONTRIBUTING
 
 - You can raise an issue under the issues tab of the github repository. Mention the issue along with the expected output. 
 - To raise a pull request(PR) on solving a listed issue, sign it and attach screenshot of the working output. You can raise a PR by forking this repository, working over the forked repository, committing changes and then raising a pull request under the Code section!
 
-# Table of Contents
+## Table of Contents
 
 1. Installation
 2. Using the software
@@ -24,10 +22,10 @@ Github repository link: https://github.com/prratadiya/Stweb.git
   
 ***************************************************************
 
-// 1. INSTALLATION AND REQUIREMENTS //
+1. INSTALLATION AND REQUIREMENTS
 
 -> Requirements:
-	1. Python 3.0+
+    1. Python 3.0+
     2. Linux OS(not compulsory)* (*-refer end of file)
 
 -> Installation procedure:
@@ -75,7 +73,7 @@ This completes the installation process and you are ready to use the product!
 
 ***************************************************************
 
-// 2. USING THE SOFTWARE // 
+2. USING THE SOFTWARE
 
 - Go into the directory where you have cloned the repository: `cd directory`
 - Activate virtual environment: `source myvenv/bin/activate`
@@ -87,7 +85,7 @@ This completes the installation process and you are ready to use the product!
  
 ****************************************************************
 
-// 3. FEATURES //
+3. FEATURES
 
 - Login and signup facility for existing and new contributors 
 - Admin login facility on the front end side 
@@ -100,7 +98,7 @@ This completes the installation process and you are ready to use the product!
 
 ****************************************************************
 
-// 4. TABLES STRUCTURE //
+4. TABLES STRUCTURE
 
 - There are four tables used - User, Foss, Tutorial_detail, Payment 
 - User table is extended from the django user model as abstract user with extra fields `name` and `contributions` which store total contributions of a user 
@@ -110,7 +108,7 @@ This completes the installation process and you are ready to use the product!
 
 ****************************************************************
 
-// 5. SCOPE FOR IMPROVEMENT //
+5. SCOPE FOR IMPROVEMENT
 
 - Giving user the liberty to chose the month for which they wish to see the concerned lists
 - Improving front end styling of forms and profile pages
@@ -118,14 +116,15 @@ This completes the installation process and you are ready to use the product!
 
 ****************************************************************
 
-// 6. CONTACT //
+6. CONTACT
+
 Documentation By: Pratik Rajendra Ratadiya
 Contact me at: prratadiya@gmail.com
 Github profile link: https://www.github.com/prratadiya
 
 ****************************************************************
 
-// 7. LICENSE //
+7. LICENSE
 
 You are not limited to use my resources. No hidden policies or rules. But a link back to me will be highly appreciated!. 
 Fair and free use of resources is expected.
